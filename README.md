@@ -17,18 +17,25 @@
 - **`about.html`**: added a paragraph on line 18.
 - **`about.html`l**: added an anchor element to return to main screen on line 21.
 
-- **Created `AboutController`** class : Created class in the controllers directory.
-- **`AboutController`** class : Added a Controller annotation on line 6.
-- **`AboutController`** class : Added a GetMapping annotation on line 9.
-- **`AboutController`** class : Created a method to handle requests for the About page on line 10.
-- **`AboutController`** class : Added a return statement on line 13.
+- **Created `AboutController.java`** class : Created class in the controllers directory.
+- **`AboutController.java`** class : Added a Controller annotation on line 6.
+- **`AboutController.java`** class : Added a GetMapping annotation on line 9.
+- **`AboutController.java`** class : Created a method to handle requests for the About page on line 10.
+- **`AboutController.java`** class : Added a return statement on line 13.
 
 - **`mainscreen.html`**: Added a button that links to the about page on line 20.
 
 ### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
+- **`BootStrapData.java`**: Added an InhousePartRepository variable on line 35. 
+- **`BootStrapData.java`**: Added the argument `inhousePartRepository` to the constructor method `BootStrapData on line 36.
+- **`BootStrapData.java`**: The constructor was updated to include the assignment `this.inhousePartRepository = inhousePartRepository;` on line 41. This change adds the `inhousePartRepository` parameter to the constructor signature and initializes the corresponding field.
+- **`BootStrapData.java`**: Implemented a conditional statement on line 64 to display 5 parts on the main screen if `partRepository` equals 0.
+- **`BootStrapData.java`**: Created 5 different parts and save them in either `outsourcedPartRepository` or `inhousePartRepository` from line 65 to 106.
+- **`BootStrapData.java`**: Implemented a conditional statement on line 125 to display 5 products on the main screen if `partRepository` equals 0.
+- **`BootStrapData.java`**: Created 5 instances of Products from line 126 to 130.
+- **`BootStrapData.java`**: Used the `save()` method to store the 5 Product instances from line 131 to 135.
 
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
 
 ### F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
