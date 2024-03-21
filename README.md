@@ -9,7 +9,21 @@
 
 
 ### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+- **Created `about.html`  file**: Created file in the templates directory.
+- **`about.html`**: added title 'About' on line 8.
+- **`about.html`**: added a div with class container on line 11.
+- **`about.html`**: added a paragraph on line 15.
+- **`about.html`**: added a paragraph on line 17.
+- **`about.html`**: added a paragraph on line 18.
+- **`about.html`l**: added an anchor element to return to main screen on line 21.
 
+- **Created `AboutController`** class : Created class in the controllers directory.
+- **`AboutController`** class : Added a Controller annotation on line 6.
+- **`AboutController`** class : Added a GetMapping annotation on line 9.
+- **`AboutController`** class : Created a method to handle requests for the About page on line 10.
+- **`AboutController`** class : Added a return statement on line 13.
+
+- **`mainscreen.html`**: Added a button that links to the about page on line 20.
 
 ### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
