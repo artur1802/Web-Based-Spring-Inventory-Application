@@ -79,10 +79,32 @@
 ### G.  Modify the parts to track maximum and minimum inventory by doing the following:
 
 *  Add additional fields to the part entity for maximum and minimum inventory.
-*  Modify the sample inventory to include the maximum and minimum fields.
-*  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
-*  Rename the file the persistent storage is saved to.
-*  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+- **`Part.java`**: Added additional fields to the part entity minInv on line 34 and maxInv on line 37.
+- **`Part.java`**: Added a minInV and maxInv as a parameter in the Part method constructor on line 47;
+- **`Part.java`**: Added a expression to initialize the field minInv using the value provided as a parameter on line 48.
+- **`Part.java`**: Added additional fields to the part entity minInv on line 34 and maxInv on line 55.
+- **`Part.java`**: Added a minInV and maxInv as a parameter in the Part method constructor on line 60;
+- **`Part.java`**: Added a expression to initialize the field minInv using the value provided as a parameter on line 61.
+- **`Part.java`**: Added setters and getter methods for the minInv and maxInv fields on line 65 to 73.
+- 
+- **`BootStrapData.java`**:Modified the sample inventory to include the maximum and minimum fields using the set method on lines 71,72,82,83,93,94,103,104,113,114.
+- 
+- **`mainscreen.html`**: Added two headers to the table cells on line 39,40.
+- **`mainscreen.html`**: Added Thymeleaf expressions used to populate the table cell (td) on lines 49 and 50.
+- 
+- **`OutsourcedPartForm.html`**: Added an input field inside a paragraph tag to specify the minimum inventory value on line 25.
+- **`OutsourcedPartForm.html`**: Added an input field inside a paragraph tag to specify the maximum inventory value on line 26.
+- **`OutsourcedPartForm.html`**: Added a static error message if the inventory value is not within the specified range on line 30.
+
+- **`InhousePartForm.html`**: Added an input field inside a paragraph tag to specify the minimum inventory value on line 24.
+- **`InhousePartForm.html`**: Added an input field inside a paragraph tag to specify the maximum inventory value on line 25.
+- **`InhousePartForm.html`**: Added a static error message if the inventory value is not within the specified range on line 29.
+
+- **`application.properties`**: Renamed the file the persistent storage is saved to on line 6.
+
+- **`AddInhousePartController.java`**: Added an if statement that check if the inventory of a part is valid or not. If the inventory is not within the specified range then it is not valid, it adds an error message to the model attribute on lines 49 to 51.
+
+- **`AddOutsourcedPartController.java`**: Added an if statement that check if the inventory of a part is valid or not. If the inventory is not within the specified range then it is not valid, it adds an error message to the model attribute on lines 50 to 52.
 
 
 ### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:

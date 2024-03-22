@@ -68,6 +68,8 @@ public class BootStrapData implements CommandLineRunner {
             display.setInv(10);
             display.setPrice(20.0);
             display.setId(111L);
+            display.setMinInv(1);
+            display.setMaxInv(100);
 
             outsourcedPartRepository.save(display);
 
@@ -77,6 +79,8 @@ public class BootStrapData implements CommandLineRunner {
             battery.setInv(10);
             battery.setPrice(25.0);
             battery.setId(112L);
+            battery.setMinInv(1);
+            battery.setMaxInv(100);
 
             outsourcedPartRepository.save(battery);
 
@@ -86,6 +90,8 @@ public class BootStrapData implements CommandLineRunner {
             processor.setInv(10);
             processor.setPrice(40.0);
             processor.setId(113L);
+            processor.setMinInv(1);
+            processor.setMaxInv(100);
 
             outsourcedPartRepository.save(processor);
 
@@ -94,6 +100,8 @@ public class BootStrapData implements CommandLineRunner {
             camera.setInv(10);
             camera.setPrice(55.0);
             camera.setId(114L);
+            camera.setMinInv(1);
+            camera.setMaxInv(100);
 
             inhousePartRepository.save(camera);
 
@@ -102,6 +110,8 @@ public class BootStrapData implements CommandLineRunner {
             motherBoard.setInv(10);
             motherBoard.setPrice(20.0);
             motherBoard.setId(115L);
+            motherBoard.setMinInv(1);
+            motherBoard.setMaxInv(100);
 
             inhousePartRepository.save(motherBoard);
 
