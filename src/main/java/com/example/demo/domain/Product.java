@@ -47,6 +47,11 @@ public class Product implements Serializable {
         this.inv = inv;
     }
 
+    public void decrementInventory(){
+        this.inv = inv-1;
+
+    }
+
     public long getId() {
         return id;
     }

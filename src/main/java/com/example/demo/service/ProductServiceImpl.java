@@ -66,4 +66,17 @@ public class ProductServiceImpl implements ProductService{
         }
         return (List<Product>) productRepository.findAll();
     }
+
+    public boolean buyProduct(Long productId) {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (optionalProduct.isPresent()) {
+            Product product = optionalProduct.get();
+            if (product.getInv() > 0) {
+                product.decrementInventory();
+                productRepository.save(product);
+                return true;
+            }
+        }
+        return false;
+    }
 }
