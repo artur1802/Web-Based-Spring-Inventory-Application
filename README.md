@@ -120,6 +120,7 @@
 
 
 ### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+- **`PartTest.java`** : Added a unit tests for the minimum value using the @Test annotation on lines 106 to 112;
+- **`PartTest.java`** : Added a unit tests for the maximum value using the @Test annotation on lines 115 to 121;
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
