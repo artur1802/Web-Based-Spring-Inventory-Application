@@ -124,3 +124,4 @@
 - **`PartTest.java`** : Added a unit tests for the maximum value using the @Test annotation on lines 115 to 121;
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
+- **`DeletePartValidator.java`** : Removed `DeletePartValidator.java` file that was in the validator folder.
