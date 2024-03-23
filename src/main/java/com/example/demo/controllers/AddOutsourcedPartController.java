@@ -48,8 +48,16 @@ public class AddOutsourcedPartController {
         OutsourcedPart op=repo.findById((int)part.getId());
 
             if (!part.isInvvalid()) {
-                theModel.addAttribute("errorMessage", "Fix your inventory value. Inventory must be between Min and Max");
-                return "OutsourcedPartForm"; //
+
+                if(part.getInv()<part.getMinInv()){
+                    theModel.addAttribute("errorMessage", "Inventory quantity is below the minimum requirement. Inventory must be between Min and Max value");
+                    return "OutsourcedPartForm";
+                }
+
+                else if(part.getInv()>part.getMaxInv()) {
+                    theModel.addAttribute("errorMessage", "Inventory quantity exceeds the maximum limit. Inventory must be between Min and Max value");
+                    return "OutsourcedPartForm"; //
+                }
             }
 
         if(op!=null)part.setProducts(op.getProducts());

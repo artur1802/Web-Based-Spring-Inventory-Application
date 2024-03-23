@@ -47,8 +47,16 @@ public class AddInhousePartController{
         InhousePart ip=repo.findById((int)part.getId());
 
             if (!part.isInvvalid()) {
-                theModel.addAttribute("errorMessage", "Fix your inventory value.Inventory must be between Min and Max");
-                return "InhousePartForm"; //
+
+                if(part.getInv()<part.getMinInv()){
+                    theModel.addAttribute("errorMessage", "Inventory quantity is below the minimum requirement. Please ensure the inventory is at least equal to the minimum value");
+                    return "InhousePartForm";
+                }
+
+                else if(part.getInv()>part.getMaxInv()) {
+                    theModel.addAttribute("errorMessage", "Inventory quantity exceeds the maximum limit. Please adjust the inventory to meet the maximum requirement");
+                    return "InhousePartForm"; //
+                }
             }
 
 
