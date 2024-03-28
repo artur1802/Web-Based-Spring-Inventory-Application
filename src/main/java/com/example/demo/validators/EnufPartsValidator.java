@@ -33,7 +33,8 @@ public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, P
         if (product.getId() != 0) {
             Product myProduct = repo.findById((int) product.getId());
             for (Part part : myProduct.getParts()) {
-                if (part.getInv()< part.getMinInv())return false;
+                if (part.getInv()< part.getMinInv())
+                    return false;
             }
             return true;
         }

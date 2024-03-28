@@ -112,8 +112,10 @@
 - **`AddOutsourcedPartController.java`** : Added a conditional statement that display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts on line 53.
 - **`AddOutsourcedPartController.java`** : Added a conditional statement that display error messages when adding and updating parts if the inventory is greater than the maximum on line 58.
 
-- **`EnufPartsValidator.java`**: Added a statement to iterate over each part of the product, and if the inventory quantity of any part is below its minimum value, returned false to indicate that the validation failed on lines 35 and 36.
-- **`ValidEnufParts.java`**: Modified the message to be more specific when the inventory quantity of part is below the minimum value on line 20.
+- **`AddProductController.java`**: Modified submitForm method, the controller iterates through each associated part of the product to validate its inventory level on line 80.
+- **`AddProductController.java`**: Modified loop, it calculates the new inventory level for each part based on the difference between the current product inventory and the updated product inventory on line 81.
+- **`AddProductController.java`**: Modified the conditional statement, if the new inventory level for any part falls below its minimum inventory, it adds a custom error message to the bindingResult, indicating that the inventory of the specific part cannot fall below its minimum on lines 82 and 83.
+- **`AddProductController.java`**: Additionally the model is implemented with necessary data, such as all available parts and associated parts, to be passed back to the form for display.
 
 - **`AddInhousePartController.java`** : Added a conditional statement that display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts on line 52.
 - **`AddInhousePartController.java`** : Added a conditional statement that display error messages when adding and updating parts if the inventory is greater than the maximum on line 57.

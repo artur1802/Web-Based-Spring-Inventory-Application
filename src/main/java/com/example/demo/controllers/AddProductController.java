@@ -76,12 +76,19 @@ public class AddProductController {
             ProductService repo = context.getBean(ProductServiceImpl.class);
             if(product.getId()!=0) {
                 Product product2 = repo.findById((int) product.getId());
-                PartService partService1 = context.getBean(PartServiceImpl.class);
-                if(product.getInv()- product2.getInv()>0) {
-                    for (Part p : product2.getParts()) {
-                        int inv = p.getInv();
-                        p.setInv(inv - (product.getInv() - product2.getInv()));
-                        partService1.save(p);
+                int invDifference = product.getInv() - product2.getInv();
+                for (Part p : product2.getParts()) {
+                    int newInv = p.getInv() - invDifference;
+                    if (newInv < p.getMinInv()) {
+                        bindingResult.rejectValue("inv", "inventory.min", "The inventory quantity of a part cannot fall below the minimum inventory required!");
+                        theModel.addAttribute("parts", partService.findAll());
+                        List<Part> availParts = new ArrayList<>();
+                        for (Part part : partService.findAll()) {
+                            if (!product2.getParts().contains(part)) availParts.add(part);
+                        }
+                        theModel.addAttribute("availparts", availParts);
+                        theModel.addAttribute("assparts", product2.getParts());
+                        return "productForm";
                     }
                 }
             }
@@ -94,7 +101,7 @@ public class AddProductController {
     }
 
     @GetMapping("/showProductFormForUpdate")
-    public String showProductFormForUpdate(@RequestParam("productID") int theId, Model theModel) {
+    public String showProductFormForUpdate(@Valid @RequestParam("productID") int theId, Model theModel) {
         theModel.addAttribute("parts", partService.findAll());
         ProductService repo = context.getBean(ProductServiceImpl.class);
         Product theProduct = repo.findById(theId);
