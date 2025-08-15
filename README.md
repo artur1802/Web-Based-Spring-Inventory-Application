@@ -9,7 +9,7 @@ This project is a customized inventory management system built with Java Spring 
 - Purchase workflow with real-time stock updates.
 - Minimum and maximum inventory validation to prevent errors.
 - “About” page with store information and easy navigation.
-- Handles duplicates intelligently with “multi-pack” logic.
+- Handles duplicates with “multi-pack” logic.
 
 ## Technology Used
 - Java
