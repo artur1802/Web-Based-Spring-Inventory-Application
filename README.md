@@ -1,5 +1,5 @@
 
-## D287 – JAVA FRAMEWORKS
+## JAVA FRAMEWORKS
 
 ### C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
 
